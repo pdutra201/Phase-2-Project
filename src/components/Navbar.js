@@ -6,7 +6,13 @@ function Navbar(){
     return(
         <div>
             <NavLink to="/" exact>
-                home
+                Search
+            </NavLink>
+            <NavLink to="/clotheslist" exact>
+                Clothes List
+            </NavLink>
+            <NavLink to="/editlist" exact>
+                Edit List
             </NavLink>
         </div>
     )
