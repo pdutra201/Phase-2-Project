@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './Navbar';
 import ClothesList from './ClothesList';
 import Search from './Search';
+import NewItem from './NewItem';
 import React, {useEffect, useState} from 'react';
 import { Route, Routes } from "react-router-dom";
 
@@ -12,12 +13,14 @@ function App() {
       .then(resp => resp.json())
       .then(data => setItemList(data))
 },[])
+
   return (
     <div >
       <Navbar />
       <Routes>
         <Route path="/" element={<Search />}/>
         <Route path="/clotheslist" element={<ClothesList itemList={itemList}/>}/>
+        <Route path="/addnewitem" element={<NewItem/>}/>
       </Routes>
       
     </div>
