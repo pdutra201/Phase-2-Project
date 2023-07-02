@@ -6,6 +6,13 @@ function NewItem(){
             <label>Name:</label>
             <input type="text" name="name"/>
             <br/>
+            <label>Size:</label>
+            <input type="text" name="size"/>
+            <br/>
+            <label>Image Url:</label>
+            <input type="text" name="image"/>
+            <br/>
+            <button type="submit">Submit</button>  
 
         </form>
     )

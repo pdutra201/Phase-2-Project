@@ -1,12 +1,12 @@
 import React from "react";
 
 function Item({i}){
-    console.log(i)
     return (
-        <a>
-            <img src={i.image}/>
+        <div>
+            <h2>{i.name}</h2>
+            <img src={i.image} alt={i.name}/>
             <p>Size:{i.size}</p>
-        </a>
+        </div>
     )
 }
 
