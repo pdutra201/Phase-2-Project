@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 function Search({searchSize, setSearchSize, filterList}){
+const navigate = useNavigate()
 function handleShirt(e){
     setSearchSize({...searchSize, shirt: e.target.value})
 }
@@ -11,6 +13,8 @@ function handlePants(e){
 function handleSubmit(e){
     e.preventDefault()
     filterList()
+    navigate('/clotheslist')
+    
 }
     return(
         <form onSubmit={handleSubmit}>
