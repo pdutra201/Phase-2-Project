@@ -18,6 +18,7 @@ function handleSubmit(e){
 }
     return(
         <form onSubmit={handleSubmit}>
+            <h1>Please Select Your Size</h1>
             <label>Shirt Size:</label>
             <select name="shirtSize" onChange={handleShirt} value={searchSize.shirt}>
                 <option value="S">Small</option>

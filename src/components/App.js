@@ -17,7 +17,6 @@ function App() {
 },[])
 
 function filterList(){
-  console.log(searchSize)
   const newList = itemList.filter((item) => {
     if(item.size === searchSize.pants){
       return item
@@ -27,7 +26,6 @@ function filterList(){
     else
       return null
     })
-    console.log(newList)
   setNewClothesList(newList)
 }
 
