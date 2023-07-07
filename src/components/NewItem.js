@@ -1,6 +1,9 @@
 import React from "react";
 
 function NewItem(){
+    function handleSumbit(e){
+        e.preventDefault()
+    }
     return(
         <form>
             <label>Name:</label>
@@ -13,6 +16,7 @@ function NewItem(){
             <input type="text" name="image"/>
             <br/>
             <button type="submit">Submit</button>  
+            
 
         </form>
     )

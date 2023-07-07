@@ -29,12 +29,28 @@ function filterList(){
   setNewClothesList(newList)
 }
 
+function handleDelete(id){
+  fetch(`https://clothes-server-6ad0.onrender.com/clothes/${id}`, {
+    method: "DELETE"
+  })
+    .then(function(){
+      const newList = itemList.filter((item) => {
+        if(item.id !== id)
+          return item
+        else  
+          return null
+      })
+      setNewClothesList(newList)
+      console.log(newList)
+    })
+}
+
   return (
     <div >
       <Navbar />
       <Routes>
         <Route path="/" element={<Search searchSize={searchSize} setSearchSize={setSearchSize} filterList={filterList}/>}/>
-        <Route path="/clotheslist" element={<ClothesList itemList={newClothesList}/>}/>
+        <Route path="/clotheslist" element={<ClothesList itemList={newClothesList} handleDelete={handleDelete}/>}/>
         <Route path="/addnewitem" element={<NewItem/>}/>
       </Routes>
       
