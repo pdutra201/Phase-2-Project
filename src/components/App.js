@@ -27,6 +27,23 @@ function App() {
         return null
       })
 
+  function addNewItem(newItem){
+    console.log(newItem)
+    fetch("https://clothes-server-6ad0.onrender.com/clothes", {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: newItem.name,
+        size: newItem.size,
+        url: newItem.url
+      })
+    })
+      .then(resp => resp.json())
+      .then(data => setItemList([...itemList, data]))
+  }
+
   function handleDelete(id){
     fetch(`https://clothes-server-6ad0.onrender.com/clothes/${id}`, {
       method: "DELETE"
@@ -42,14 +59,14 @@ function App() {
         setItemList(newList)
       })
   }
-
+  console.log(itemList)
   return (
     <div >
       <Navbar />
       <Routes>
         <Route path="/" element={<Search searchSize={searchSize} setSearchSize={setSearchSize}/>}/>
         <Route path="/clotheslist" element={<ClothesList itemList={newList} handleDelete={handleDelete}/>}/>
-        <Route path="/addnewitem" element={<NewItem/>}/>
+        <Route path="/addnewitem" element={<NewItem addNewItem={addNewItem}/>}/>
       </Routes>
       
     </div>
