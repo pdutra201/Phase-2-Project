@@ -27,10 +27,11 @@ nav a.active {
 .item {
   padding: 10px;
   margin: 10px;
-  background-color: #ffde00;
+  background-color: #c7c6c0;
   color: #333;
   display: inline-block;
   font-family: monospace;
   font-size: 32px;
   text-align: center;
+  border-image: auto;
 }
