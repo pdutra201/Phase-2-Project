@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './Navbar';
 import ClothesList from './ClothesList';
-import Search from './Search';
+import Sort from './Sort';
 import NewItem from './NewItem';
 import React, {useEffect, useState} from 'react';
 import { Route, Routes } from "react-router-dom";
@@ -59,12 +59,12 @@ function App() {
         setItemList(newList)
       })
   }
-  console.log(itemList)
+
   return (
     <div >
       <Navbar />
       <Routes>
-        <Route path="/" element={<Search searchSize={searchSize} setSearchSize={setSearchSize}/>}/>
+        <Route path="/" element={<Sort searchSize={searchSize} setSearchSize={setSearchSize}/>}/>
         <Route path="/clotheslist" element={<ClothesList itemList={newList} handleDelete={handleDelete}/>}/>
         <Route path="/addnewitem" element={<NewItem addNewItem={addNewItem}/>}/>
       </Routes>

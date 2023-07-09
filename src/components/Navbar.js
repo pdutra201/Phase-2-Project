@@ -6,7 +6,7 @@ function Navbar(){
     return(
         <nav>
             <NavLink to="/">
-                Search
+                Sort
             </NavLink>
             <NavLink to="/clotheslist" >
                 Clothes List
