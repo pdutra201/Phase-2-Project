@@ -12,7 +12,15 @@ function NewItem({addNewItem}){
     function handleSumbit(e){
         e.preventDefault()
         addNewItem(newItem)
+        setNewItem({
+            name:"",
+            size:"",
+            price:"",
+            image:""
+        })
     }
+
+   
     return(
         <form onSubmit={handleSumbit}>
             <label>Name:</label>
@@ -27,8 +35,7 @@ function NewItem({addNewItem}){
             <label>Image Url:</label>
             <input type="text" name="image" onChange={e => setNewItem({...newItem, image:e.target.value})} value={newItem.image}/>
             <br/>
-            <button type="submit">Submit</button>  
-            
+            <button type="submit">Submit</button>            
 
         </form>
     )
