@@ -6,7 +6,7 @@ function Item({i, handleDelete}){
     }
 
     return (
-        <div>
+        <div className="item">
             <h2>{i.name}</h2>
             <img src={i.image} alt={i.name}/>
             <p>Size:{i.size}</p>
