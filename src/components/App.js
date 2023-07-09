@@ -37,7 +37,8 @@ function App() {
       body: JSON.stringify({
         name: newItem.name,
         size: newItem.size,
-        image: newItem.url
+        price: newItem.price,
+        image: newItem.image
       })
     })
       .then(resp => resp.json())
